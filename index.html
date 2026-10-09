@@ -4,114 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mairos Barbosa | Engenharia e Operações</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js & Datalabels -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Plugin ChartDataLabels para os rótulos de dados -->
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+    
     <style>
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4, h5, h6, .serif { font-family: 'Merriweather', serif; }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-slate-900">
 
-    <!-- Header / Navbar OBRIGATORIAMENTE W-FULL -->
-    <nav class="w-full px-8 md:px-16 py-6 flex justify-between items-center bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
+    <nav class="w-full px-8 md:px-16 py-6 flex justify-between items-center bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div class="flex flex-col">
-            <span class="text-2xl font-bold text-gray-900 tracking-tight serif">MAIROS BARBOSA</span>
-            <span class="text-xs font-semibold text-blue-700 uppercase tracking-widest mt-1">Engenharia | Gestão de Ativos | Dados & Automação</span>
+            <span class="text-2xl font-bold text-slate-900 tracking-tight serif uppercase">Mairos Barbosa</span>
+            <span class="text-[0.65rem] font-bold text-sky-600 uppercase tracking-widest mt-1">
+                Engenharia &bull; Gestão de Ativos &bull; Dados & Automação
+            </span>
         </div>
         
-        <!-- Menu Desktop -->
-        <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-            <li><a href="#sobre" class="hover:text-blue-700 transition-colors">Sobre Mim</a></li>
-            <li><a href="#projetos" class="hover:text-blue-700 transition-colors">Projetos</a></li>
-            <li><a href="#resultados" class="hover:text-blue-700 transition-colors">Resultados</a></li>
-            <li><a href="#habilidades" class="hover:text-blue-700 transition-colors">Liderança</a></li>
+        <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+            <li><a href="#sobre" class="hover:text-sky-600 transition-colors">Sobre Mim</a></li>
+            <li><a href="#projetos" class="hover:text-sky-600 transition-colors">Projetos</a></li>
+            <li><a href="#resultados" class="hover:text-sky-600 transition-colors">Resultados</a></li>
+            <li><a href="#habilidades" class="hover:text-sky-600 transition-colors">Liderança</a></li>
         </ul>
 
-        <!-- Botão Menu Mobile -->
         <button id="mobile-menu-btn" class="md:hidden flex flex-col items-center justify-center space-y-1.5 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors cursor-pointer">
-            <span class="w-6 h-0.5 bg-gray-800 transition-transform duration-300"></span>
-            <span class="w-6 h-0.5 bg-gray-800 transition-opacity duration-300"></span>
-            <span class="w-6 h-0.5 bg-gray-800 transition-transform duration-300"></span>
+            <span class="w-6 h-0.5 bg-slate-800 transition-transform duration-300"></span>
+            <span class="w-6 h-0.5 bg-slate-800 transition-opacity duration-300"></span>
+            <span class="w-6 h-0.5 bg-slate-800 transition-transform duration-300"></span>
         </button>
     </nav>
 
-    <!-- Menu Dropdown Mobile -->
-    <div id="mobile-menu" class="hidden fixed w-full bg-white border-b border-gray-200 shadow-lg z-30 md:hidden flex flex-col top-[90px]">
-        <a href="#sobre" class="px-8 py-4 text-gray-700 font-medium border-b border-gray-100 hover:bg-blue-50 hover:text-blue-700 mobile-link">Sobre Mim</a>
-        <a href="#projetos" class="px-8 py-4 text-gray-700 font-medium border-b border-gray-100 hover:bg-blue-50 hover:text-blue-700 mobile-link">Projetos</a>
-        <a href="#resultados" class="px-8 py-4 text-gray-700 font-medium border-b border-gray-100 hover:bg-blue-50 hover:text-blue-700 mobile-link">Resultados</a>
-        <a href="#habilidades" class="px-8 py-4 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-700 mobile-link">Liderança</a>
+    <div id="mobile-menu" class="hidden fixed w-full bg-white border-b border-gray-200 shadow-lg z-40 md:hidden flex flex-col top-[90px]">
+        <a href="#sobre" class="px-8 py-4 text-slate-700 font-medium border-b border-gray-100 hover:bg-sky-50 hover:text-sky-600 mobile-link">Sobre Mim</a>
+        <a href="#projetos" class="px-8 py-4 text-slate-700 font-medium border-b border-gray-100 hover:bg-sky-50 hover:text-sky-600 mobile-link">Projetos</a>
+        <a href="#resultados" class="px-8 py-4 text-slate-700 font-medium border-b border-gray-100 hover:bg-sky-50 hover:text-sky-600 mobile-link">Resultados</a>
+        <a href="#habilidades" class="px-8 py-4 text-slate-700 font-medium hover:bg-sky-50 hover:text-sky-600 mobile-link">Liderança</a>
     </div>
 
-    <!-- Hero Section -->
-    <section id="sobre" class="max-w-6xl mx-auto px-8 py-20 flex flex-col-reverse md:flex-row items-center gap-12">
-        <div class="w-full md:w-2/3">
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900 serif">
-                Gestão de rotina conectando <span class="text-blue-700 italic">pessoas, processos e dados.</span>
+    <section id="sobre" class="scroll-mt-28 max-w-7xl mx-auto px-8 md:px-16 py-20 grid md:grid-cols-2 gap-12 items-center bg-gray-50">
+        <div class="w-full">
+            <p class="text-sky-600 font-bold tracking-widest uppercase text-[0.65rem] mb-4 flex items-center gap-2">
+                <!-- Ícone de Raio -->
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                ENGENHARIA | DADOS & AUTOMAÇÃO
+            </p>
+            <h1 class="text-[3.25rem] md:text-[3.75rem] font-serif text-slate-900 leading-[1.05] mb-8">
+                Gestão de rotina conectando <br>
+                <span class="italic font-light text-sky-600">pessoas, processos e dados.</span>
             </h1>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                Sou engenheiro mecatrônico com trajetória consolidada em ambientes industriais e logísticos de alta complexidade. 
+            <p class="text-slate-600 text-lg leading-relaxed mb-6 font-light">
+                Minha trajetória foi desenvolvida em ambientes industriais e logísticos de alta complexidade, com experiências consistentes na <strong class="font-medium text-slate-800">Samarco</strong>, <strong class="font-medium text-slate-800">ArcelorMittal</strong>, <strong class="font-medium text-slate-800">Vallourec</strong> e <strong class="font-medium text-slate-800">Mercado Livre</strong>.
             </p>
-            <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                Atuo diretamente na rotina de operações, planejamento, manutenção e controle financeiro. Acredito que resultados sustentáveis nascem da proximidade com o chão de fábrica (gemba) e da transformação de números em ações práticas e automatizadas.
+            <p class="text-slate-600 text-lg leading-relaxed font-light">
+                Estive diretamente conectado à rotina de operações, planejamento, manutenção, controle financeiro (OPEX/CAPEX) e inteligência de dados. Acredito que resultados sustentáveis nascem da proximidade com o chão de fábrica (gemba) e da transformação de números em ações práticas.
             </p>
-            <a href="#projetos" class="inline-block bg-blue-700 text-white font-medium px-8 py-3 rounded-md hover:bg-blue-800 transition-colors shadow-md">
-                Explorar Trajetória
-            </a>
         </div>
-        <div class="w-full md:w-1/3 flex justify-center">
-            <div class="relative w-64 h-64 rounded-full p-2 border-4 border-white shadow-xl overflow-hidden bg-white">
-                <img src="Foto LinkedIn - 28_08_2026.jpg" alt="Mairos Barbosa" 
-                     class="w-full h-full object-cover rounded-full"
-                     onerror="this.style.display='none'; document.getElementById('fallback-img').style.display='flex';">
-                <div id="fallback-img" class="hidden w-full h-full rounded-full bg-slate-800 items-center justify-center text-white text-6xl font-bold serif">
-                    MB
-                </div>
+        <div class="w-full flex justify-center md:justify-end">
+            <!-- Círculo Tipográfico "MB" -->
+            <div class="w-[320px] h-[320px] rounded-full bg-white border border-sky-100 shadow-[0_20px_60px_-15px_rgba(2,132,199,0.15)] flex items-center justify-center">
+                <span class="text-[100px] font-bold text-sky-600 font-sans tracking-tight">MB</span>
             </div>
         </div>
     </section>
 
-    <!-- Projetos de Destaque -->
-    <section id="projetos" class="bg-white py-20 border-t border-gray-200">
-        <div class="max-w-6xl mx-auto px-8">
-            <h2 class="text-3xl font-bold mb-4 text-center text-gray-900 serif">Projetos de Destaque</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Iniciativas que aliaram automatização de processos, gestão de ativos, planejamento, controle rigoroso de custos e governança operacional.</p>
+    <section id="projetos" class="scroll-mt-24 bg-white py-20 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-16">
+                <p class="text-sky-600 font-semibold tracking-widest uppercase text-xs mb-2">Cases de Sucesso</p>
+                <h2 class="text-3xl font-bold text-slate-900 serif">Projetos de Destaque</h2>
+            </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="text-blue-700 mb-4 bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                <!-- Card 1 (Atualizado conforme imagem 3) -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <div class="text-sky-600 mb-6 bg-gray-50 border border-gray-100 w-12 h-12 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 20V10M12 20V4M6 20v-6"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900 serif">Automação SAP & Dados</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold mb-4 text-slate-900 serif">Governança CAPEX & OPEX</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed font-light">
+                        Atuação no Mercado Livre estruturando controles físico-financeiros para uma carteira de <strong class="font-semibold text-slate-700">R$ 320 milhões em OPEX</strong> e <strong class="font-semibold text-slate-700">R$ 22 milhões em CAPEX</strong>, cobrindo mais de 330 operações no Brasil com alta acuracidade.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <div class="text-sky-600 mb-6 bg-gray-50 border border-gray-100 w-12 h-12 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900 serif">Automação SAP & Dados</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed font-light">
                         Desenvolvimento de scripts VBA e cruzamento de bases (SQL/BigQuery) para automatizar extração de relatórios e criação de ordens, reduzindo o trabalho manual massivamente.
                     </p>
                 </div>
 
-                <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="text-blue-700 mb-4 bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <div class="text-sky-600 mb-6 bg-gray-50 border border-gray-100 w-12 h-12 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900 serif">Governança OPEX/CAPEX</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Estruturação orçamentária e de controles físico-financeiros para centenas de operações logísticas. Criação de rotinas de forecast que conectaram o financeiro à manutenção.
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                    <div class="text-blue-700 mb-4 bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900 serif">Confiabilidade Técnica</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold mb-4 text-slate-900 serif">Confiabilidade Técnica</h3>
+                    <p class="text-slate-500 text-[15px] leading-relaxed font-light">
                         Liderança técnica em paradas planejadas, implantação de Centros de Monitoramento de Energia e gestão de manutenções críticas para continuidade operacional.
                     </p>
                 </div>
@@ -119,86 +127,93 @@
         </div>
     </section>
 
-    <!-- Gráficos de Resultados -->
-    <section id="resultados" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-8">
-            <h2 class="text-3xl font-bold mb-4 text-center text-gray-900 serif">Métricas e Evolução</h2>
-            <p class="text-center text-gray-500 mb-12">Indicadores operacionais alavancados pela gestão de rotina e dados.</p>
+    <section id="resultados" class="scroll-mt-24 py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-16">
+                <p class="text-sky-600 font-semibold tracking-widest uppercase text-xs mb-2">Métricas em Foco</p>
+                <h2 class="text-3xl font-bold text-slate-900 serif">Evolução de Indicadores</h2>
+            </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Gráfico 1 -->
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center">
-                    <h4 class="font-bold mb-4 text-gray-800 serif">Previsibilidade Financeira</h4>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center hover:shadow-md transition-shadow">
+                    <h4 class="font-bold mb-6 text-slate-900 serif text-lg">Previsibilidade Financeira</h4>
                     <div class="w-full relative h-48">
                         <canvas id="chartCapex"></canvas>
                     </div>
-                    <p class="text-xs text-center text-gray-500 mt-4">Evolução do Q1 para o Q3 de 2026.</p>
+                    <p class="text-sm text-center text-slate-500 mt-6 font-light">Evolução do Q1 para o Q3 de 2026.</p>
                 </div>
 
                 <!-- Gráfico 2 -->
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center">
-                    <h4 class="font-bold mb-4 text-gray-800 serif">Disponibilidade Física</h4>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center hover:shadow-md transition-shadow">
+                    <h4 class="font-bold mb-6 text-slate-900 serif text-lg">Disponibilidade Física</h4>
                     <div class="w-full relative h-48">
                         <canvas id="chartDisponibilidade"></canvas>
                     </div>
-                    <p class="text-xs text-center text-gray-500 mt-4">Crescimento alcançado via análise de falhas.</p>
+                    <p class="text-sm text-center text-slate-500 mt-6 font-light">Crescimento alcançado via análise de falhas.</p>
                 </div>
 
                 <!-- Gráfico 3 -->
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center">
-                    <h4 class="font-bold mb-4 text-gray-800 serif">Eficiência Analítica</h4>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center hover:shadow-md transition-shadow">
+                    <h4 class="font-bold mb-6 text-slate-900 serif text-lg">Eficiência Analítica</h4>
                     <div class="w-full relative h-48">
                         <canvas id="chartAnalitica"></canvas>
                     </div>
-                    <p class="text-xs text-center text-gray-500 mt-4">Redução no tempo de tratamento de dados.</p>
+                    <p class="text-sm text-center text-slate-500 mt-6 font-light">Redução no tempo de tratamento de dados.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Habilidades e Liderança -->
-    <section id="habilidades" class="bg-slate-900 text-white py-20">
-        <div class="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16">
+    <section id="habilidades" class="scroll-mt-24 bg-slate-900 text-white py-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-                <h2 class="text-3xl font-bold mb-8 text-white serif">Visão de Liderança</h2>
-                <div class="space-y-8">
-                    <div class="border-l-4 border-blue-500 pl-5">
-                        <h4 class="font-bold text-lg mb-2 text-blue-100 serif">Comunicação e Gemba</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Meu estilo de liderança é colaborativo, transparente e orientado por dados. Acredito que o engajamento nasce da clareza e da presença no dia a dia do piso.</p>
+                <p class="text-sky-500 font-semibold tracking-widest uppercase text-xs mb-2">Filosofia de Trabalho</p>
+                <h2 class="text-3xl font-bold mb-10 text-white serif">Visão de Liderança</h2>
+                <div class="space-y-10">
+                    <div class="border-l-[3px] border-sky-500 pl-6">
+                        <h4 class="font-bold text-lg mb-3 text-sky-100 serif tracking-wide">Comunicação e Gemba</h4>
+                        <p class="text-slate-400 text-[15px] leading-relaxed font-light">Meu estilo de liderança é colaborativo, transparente e orientado por dados. Acredito que o engajamento nasce da clareza e da presença no dia a dia do piso.</p>
                     </div>
-                    <div class="border-l-4 border-blue-500 pl-5">
-                        <h4 class="font-bold text-lg mb-2 text-blue-100 serif">Direção por Indicadores</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">A gestão funciona quando o indicador chega ao time em linguagem simples e se transforma em ação. A lógica é: medir, entender o processo, envolver as pessoas e padronizar soluções.</p>
+                    <div class="border-l-[3px] border-sky-500 pl-6">
+                        <h4 class="font-bold text-lg mb-3 text-sky-100 serif tracking-wide">Direção por Indicadores</h4>
+                        <p class="text-slate-400 text-[15px] leading-relaxed font-light">
+                            A gestão funciona quando o indicador chega ao time em linguagem simples e se transforma em ação. A lógica é:<br>
+                            <span class="block mt-3 text-sky-400 font-medium text-sm tracking-wide">
+                                Medir ➔ entender o processo ➔ envolver as pessoas ➔ padronizar soluções.
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
             
             <div>
-                <h2 class="text-3xl font-bold mb-8 text-white serif">Ferramentas & Competências</h2>
+                <p class="text-sky-500 font-semibold tracking-widest uppercase text-xs mb-2">Hard Skills</p>
+                <h2 class="text-3xl font-bold mb-10 text-white serif">Ferramentas & Competências</h2>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-slate-800 p-5 rounded-lg text-center border border-slate-700 shadow-inner">
-                        <span class="block font-bold text-lg mb-1 text-white">SAP PM/MM</span>
-                        <span class="text-xs text-blue-400 uppercase tracking-wider">S/4HANA & ECC</span>
+                    <div class="bg-slate-800/80 p-5 rounded-xl text-center border border-slate-700/50 shadow-inner">
+                        <span class="block font-bold text-lg mb-1 text-white tracking-wide">SAP PM/MM</span>
+                        <span class="text-[11px] text-sky-400 uppercase tracking-widest font-semibold">S/4HANA & ECC</span>
                     </div>
-                    <div class="bg-slate-800 p-5 rounded-lg text-center border border-slate-700 shadow-inner">
-                        <span class="block font-bold text-lg mb-1 text-white">Análise de Dados</span>
-                        <span class="text-xs text-blue-400 uppercase tracking-wider">Excel Avançado & VBA</span>
+                    <div class="bg-slate-800/80 p-5 rounded-xl text-center border border-slate-700/50 shadow-inner">
+                        <span class="block font-bold text-lg mb-1 text-white tracking-wide">Análise de Dados</span>
+                        <span class="text-[11px] text-sky-400 uppercase tracking-widest font-semibold">Excel Avançado & VBA</span>
                     </div>
-                    <div class="bg-slate-800 p-5 rounded-lg text-center border border-slate-700 shadow-inner">
-                        <span class="block font-bold text-lg mb-1 text-white">Databases</span>
-                        <span class="text-xs text-blue-400 uppercase tracking-wider">SQL & BigQuery</span>
+                    <div class="bg-slate-800/80 p-5 rounded-xl text-center border border-slate-700/50 shadow-inner">
+                        <span class="block font-bold text-lg mb-1 text-white tracking-wide">Databases</span>
+                        <span class="text-[11px] text-sky-400 uppercase tracking-widest font-semibold">SQL & BigQuery</span>
                     </div>
-                    <div class="bg-slate-800 p-5 rounded-lg text-center border border-slate-700 shadow-inner">
-                        <span class="block font-bold text-lg mb-1 text-white">Dashboards</span>
-                        <span class="text-xs text-blue-400 uppercase tracking-wider">Power BI & Looker</span>
+                    <div class="bg-slate-800/80 p-5 rounded-xl text-center border border-slate-700/50 shadow-inner">
+                        <span class="block font-bold text-lg mb-1 text-white tracking-wide">Dashboards</span>
+                        <span class="text-[11px] text-sky-400 uppercase tracking-widest font-semibold">Power BI & Looker</span>
                     </div>
                     
-                    <!-- Idiomas -->
-                    <div class="col-span-2 bg-slate-800 p-6 rounded-lg border border-slate-700 shadow-inner mt-2 flex flex-col items-center">
-                        <span class="block font-bold text-lg mb-4 text-white">Idiomas</span>
-                        <div class="flex flex-wrap justify-center gap-3">
-                            <span class="px-5 py-2 bg-blue-900/50 text-blue-200 border border-blue-800/50 rounded-full text-sm font-semibold tracking-wide">Inglês Avançado</span>
-                            <span class="px-5 py-2 bg-blue-900/50 text-blue-200 border border-blue-800/50 rounded-full text-sm font-semibold tracking-wide">Espanhol Intermediário</span>
+                    <!-- Bloco de Idiomas -->
+                    <div class="col-span-2 bg-slate-800/80 p-6 rounded-xl border border-slate-700/50 shadow-inner mt-2 flex flex-col items-center">
+                        <span class="block font-bold text-lg mb-4 text-white serif">Idiomas</span>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="px-5 py-2 bg-slate-900/80 text-sky-300 border border-slate-700/80 rounded-full text-xs font-semibold tracking-wider uppercase shadow-sm">Inglês Avançado</span>
+                            <span class="px-5 py-2 bg-slate-900/80 text-sky-300 border border-slate-700/80 rounded-full text-xs font-semibold tracking-wider uppercase shadow-sm">Espanhol Intermediário</span>
                         </div>
                     </div>
                 </div>
@@ -206,12 +221,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="w-full text-center py-8 bg-white text-gray-500 text-sm border-t border-gray-200">
+    <footer class="w-full text-center py-8 bg-white text-slate-500 text-sm border-t border-gray-200 font-light">
         <p>&copy; 2026 Mairos Barbosa. Portfólio Profissional.</p>
     </footer>
 
-    <!-- Scripts -->
     <script>
         // Lógica do Menu Mobile
         const btn = document.getElementById('mobile-menu-btn');
@@ -241,13 +254,14 @@
             });
         });
 
-        // Configuração Global do Chart.js e Registro do Plugin de Rótulos (DataLabels)
+        // Configuração Global do Chart.js
         Chart.register(ChartDataLabels);
         Chart.defaults.font.family = "'Inter', sans-serif";
-        Chart.defaults.color = '#6b7280';
-        Chart.defaults.plugins.tooltip.backgroundColor = '#1e293b';
+        Chart.defaults.color = '#64748b';
+        Chart.defaults.plugins.tooltip.backgroundColor = '#0f172a';
+        Chart.defaults.plugins.tooltip.padding = 12;
 
-        // Gráfico 1: Previsibilidade Financeira (Barra com Rótulos)
+        // Gráfico 1: Previsibilidade Financeira (CAPEX)
         new Chart(document.getElementById('chartCapex'), {
             type: 'bar',
             data: {
@@ -255,70 +269,9 @@
                 datasets: [{
                     label: 'Acuracidade',
                     data: [63, 93],
-                    backgroundColor: ['#93c5fd', '#1d4ed8'],
-                    borderRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { 
-                    legend: { display: false },
-                    datalabels: {
-                        color: '#ffffff',
-                        anchor: 'center',
-                        align: 'center',
-                        font: { weight: 'bold', size: 14 },
-                        formatter: (value) => value + '%'
-                    }
-                },
-                scales: { 
-                    y: { beginAtZero: true, max: 100, ticks: { display: false }, grid: { display: false } },
-                    x: { grid: { display: false } }
-                }
-            }
-        });
-
-        // Gráfico 2: Disponibilidade Física (Linha - Sem Rótulos para não poluir)
-        new Chart(document.getElementById('chartDisponibilidade'), {
-            type: 'line',
-            data: {
-                labels: ['Antes', 'Depois'],
-                datasets: [{
-                    label: 'Disponibilidade (%)',
-                    data: [83, 94],
-                    borderColor: '#1d4ed8',
-                    backgroundColor: 'rgba(29, 78, 216, 0.15)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: '#1d4ed8',
-                    pointRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { 
-                    legend: { display: false },
-                    datalabels: { display: false } 
-                },
-                scales: { 
-                    y: { beginAtZero: false, min: 70, max: 100 }
-                }
-            }
-        });
-
-        // Gráfico 3: Eficiência Analítica (Barra com Rótulos 100% e 7%)
-        new Chart(document.getElementById('chartAnalitica'), {
-            type: 'bar',
-            data: {
-                labels: ['Antes', 'Depois'],
-                datasets: [{
-                    label: 'Tempo Dedicado',
-                    data: [100, 7],
-                    backgroundColor: ['#e5e7eb', '#1d4ed8'],
-                    borderRadius: 4
+                    backgroundColor: ['#e2e8f0', '#0ea5e9'],
+                    borderRadius: 6,
+                    borderSkipped: false
                 }]
             },
             options: {
@@ -328,21 +281,102 @@
                     legend: { display: false },
                     datalabels: {
                         color: function(context) {
-                            return context.dataIndex === 0 ? '#4b5563' : '#ffffff';
+                            return context.dataIndex === 0 ? '#64748b' : '#ffffff';
                         },
-                        anchor: function(context) {
-                            return context.dataIndex === 1 ? 'end' : 'center';
-                        },
-                        align: function(context) {
-                            return context.dataIndex === 1 ? 'top' : 'center';
-                        },
-                        font: { weight: 'bold', size: 14 },
+                        anchor: 'center',
+                        align: 'center',
+                        font: { weight: 'bold', size: 15 },
                         formatter: (value) => value + '%'
                     }
                 },
                 scales: { 
-                    y: { beginAtZero: true, max: 120, ticks: { display: false }, grid: { display: false } },
-                    x: { grid: { display: false } }
+                    y: { beginAtZero: true, max: 100, ticks: { display: false }, grid: { display: false }, border: { display: false } },
+                    x: { grid: { display: false }, border: { display: false } }
+                }
+            }
+        });
+
+        // Gráfico 2: Disponibilidade Física
+        new Chart(document.getElementById('chartDisponibilidade'), {
+            type: 'line',
+            data: {
+                labels: ['Antes', 'Depois'],
+                datasets: [{
+                    label: 'Disponibilidade (%)',
+                    data: [83, 94],
+                    borderColor: '#0ea5e9',
+                    backgroundColor: 'rgba(14, 165, 233, 0.15)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#0ea5e9',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: { padding: { top: 25 } },
+                plugins: { 
+                    legend: { display: false },
+                    datalabels: {
+                        color: '#0ea5e9',
+                        anchor: 'end',
+                        align: 'top',
+                        font: { weight: 'bold', size: 14 },
+                        formatter: (value) => value + '%',
+                        offset: 6
+                    } 
+                },
+                scales: { 
+                    y: { beginAtZero: false, min: 70, max: 105, ticks: { display: false }, grid: { display: false }, border: { display: false } },
+                    x: { grid: { display: false }, border: { display: false } }
+                }
+            }
+        });
+
+        // Gráfico 3: Eficiência Analítica (Tempo SAP) - AGORA COM O RÓTULO DO DEPOIS VÍSIVEL
+        new Chart(document.getElementById('chartAnalitica'), {
+            type: 'bar',
+            data: {
+                labels: ['Antes', 'Depois'],
+                datasets: [{
+                    label: 'Tempo Dedicado',
+                    data: [100, 7],
+                    backgroundColor: ['#e2e8f0', '#0ea5e9'],
+                    borderRadius: 6,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: { padding: { top: 35 } }, // Ajuste para o rótulo de 7% caber com folga flutuando em cima da barra
+                plugins: { 
+                    legend: { display: false },
+                    datalabels: {
+                        color: function(context) {
+                            return context.dataIndex === 0 ? '#475569' : '#0284c7'; // O 7% fica azul para ser legível
+                        },
+                        anchor: function(context) {
+                            return context.dataIndex === 1 ? 'end' : 'center'; // O 7% âncora no fim (topo)
+                        },
+                        align: function(context) {
+                            return context.dataIndex === 1 ? 'top' : 'center'; // O 7% flutua acima
+                        },
+                        offset: function(context) {
+                            return context.dataIndex === 1 ? 4 : 0; // Leve espaçamento
+                        },
+                        font: { weight: 'bold', size: 15 },
+                        formatter: (value) => value + '%'
+                    }
+                },
+                scales: { 
+                    y: { beginAtZero: true, max: 120, ticks: { display: false }, grid: { display: false }, border: { display: false } },
+                    x: { grid: { display: false }, border: { display: false } }
                 }
             }
         });
