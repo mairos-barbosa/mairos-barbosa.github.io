@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Profissional | Engenharia & Operações</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#475569',
+                            DEFAULT: '#1E293B', // Corporate Slate/Navy
+                            dark: '#0F172A',
+                            accent: '#0284C7' // Elegant Blue
+                        },
+                        surface: '#F8FAFC',
+                        ink: '#334155'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-ink font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <nav class="w-full px-8 md:px-16 py-5 border-b border-gray-200/60 bg-white/90 backdrop-blur-md fixed top-0 z-50 flex justify-between items-center shadow-sm">
+        <a href="#sobre" class="flex flex-col">
+            <span class="font-serif font-bold text-xl md:text-2xl tracking-tight text-brand-dark uppercase">Mairos Barbosa</span>
+            <span class="hidden md:block text-[0.60rem] font-semibold text-brand-accent tracking-widest uppercase mt-0.5">Planejamento • Projetos • Ativos • Performance Financeira</span>
+            <span class="md:hidden text-[0.60rem] font-semibold text-brand-accent tracking-widest uppercase mt-0.5">Engenharia | Dados & Automação</span>
+        </a>
+        <ul class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
+            <li><a href="#sobre" class="hover:text-brand-accent transition-colors">Sobre Mim</a></li>
+            <li><a href="#projetos" class="hover:text-brand-accent transition-colors">Projetos</a></li>
+            <li><a href="#resultados" class="hover:text-brand-accent transition-colors">Resultados</a></li>
+            <li><a href="#habilidades" class="hover:text-brand-accent transition-colors">Habilidades & Liderança</a></li>
+        </ul>
+        <!-- Mobile Menu Placeholder -->
+        <div class="md:hidden text-brand-dark">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section id="sobre" class="w-full bg-white relative overflow-hidden py-24 md:py-32 px-6 border-b border-gray-200/60">
+            <!-- Elementos visuais de fundo em azul suave para harmonia -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 left-10 w-64 h-64 bg-brand-accent/5 rounded-full blur-2xl"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
+                <div class="w-full md:w-3/5">
+                    <p class="text-brand-accent font-semibold tracking-widest uppercase text-xs mb-4 flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Engenharia | Dados & Automação
+                    </p>
+                    <h1 class="font-serif text-4xl md:text-6xl font-light leading-tight text-brand-dark mb-6">
+                        Gestão de rotina conectando <br />
+                        <span class="italic text-brand-accent font-normal">pessoas, processos e dados.</span>
+                    </h1>
+                    <div class="text-gray-600 font-light leading-relaxed space-y-4 text-lg">
+                        <p>
+                            Minha trajetória foi desenvolvida em ambientes industriais e logísticos de alta complexidade, com experiências consistentes na <strong>Samarco, ArcelorMittal, Vallourec e Mercado Livre</strong>.
+                        </p>
+                        <p>
+                            Estive diretamente conectado à rotina de operações, planejamento, manutenção, controle financeiro (OPEX/CAPEX) e inteligência de dados. Acredito que resultados sustentáveis nascem da proximidade com o chão de fábrica (genba) e da transformação de números em ações práticas.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/5 flex justify-center">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-brand-accent/20 p-2 relative shadow-[0_10px_40px_-10px_rgba(2,132,199,0.2)] bg-white">
+                        <div class="w-full h-full rounded-full bg-surface flex items-center justify-center overflow-hidden relative">
+                            <!-- Foto do Perfil inserida com Fallback para o Canvas -->
+                            <img src="Foto LinkedIn - 28_08_2026.jpg" alt="Mairos Barbosa" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/f8fafc/0284c7?text=MB';">
+                            
+                            <!-- Borda interna suave para acabamento -->
+                            <div class="absolute inset-0 rounded-full border border-black/5 pointer-events-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="max-w-6xl mx-auto px-6 py-24">
+            <div class="text-center mb-16">
+                <p class="text-brand-accent font-semibold tracking-widest uppercase text-xs mb-2">Cases de Sucesso</p>
+                <h2 class="font-serif text-4xl font-light text-brand-dark mb-4">Projetos de Destaque</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto font-light">Iniciativas que aliaram automação técnica, controle rigoroso de custos e governança operacional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 bg-surface rounded-xl flex items-center justify-center text-brand-accent mb-6 border border-gray-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-brand-dark">Governança CAPEX & OPEX</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed mb-4">
+                        Atuação no Mercado Livre estruturando controles físico-financeiros para uma carteira de <strong>R$ 320 milhões em OPEX</strong> e <strong>R$ 22 milhões em CAPEX</strong>, cobrindo mais de 330 operações no Brasil com alta acuracidade.
+                    </p>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 bg-surface rounded-xl flex items-center justify-center text-brand-accent mb-6 border border-gray-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-brand-dark">Automação SAP & Tratamento de Dados</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed mb-4">
+                        Saneamento automatizado de mais de 20 mil notas/ordens na Samarco. Desenvolvimento de rotinas em VBA para extração, criação de planos e dashboards, transformando o modo como a manutenção lida com informações.
+                    </p>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 bg-surface rounded-xl flex items-center justify-center text-brand-accent mb-6 border border-gray-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-brand-dark">Centro de Monitoramento de Energia</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed mb-4">
+                        Participação na homologação e implantação de 50 religadores integrados ao SCADA (Samarco). Aumento drástico na segurança operacional e redução substancial do tempo necessário para manobras elétricas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resultados" class="bg-white border-y border-gray-200/60 py-24">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-4xl font-light text-brand-dark mb-4">Indicadores de Evolução</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto font-light">Transformando problemas operacionais em entregas mensuráveis e sustentáveis.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Gráfico 1 -->
+                    <div class="flex flex-col items-center">
+                        <h4 class="font-serif font-bold text-gray-800 mb-2">Previsibilidade Financeira</h4>
+                        <p class="text-xs text-gray-500 mb-6 uppercase tracking-wider text-center">Acuracidade CAPEX (Meli)</p>
+                        <div class="w-full h-64 relative">
+                            <canvas id="capexChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico 2 -->
+                    <div class="flex flex-col items-center">
+                        <h4 class="font-serif font-bold text-gray-800 mb-2">Confiabilidade de Planta</h4>
+                        <p class="text-xs text-gray-500 mb-6 uppercase tracking-wider text-center">Disponibilidade Física (VSB)</p>
+                        <div class="w-full h-64 relative">
+                            <canvas id="disponibilidadeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico 3 -->
+                    <div class="flex flex-col items-center">
+                        <h4 class="font-serif font-bold text-gray-800 mb-2">Eficiência Analítica</h4>
+                        <p class="text-xs text-gray-500 mb-6 uppercase tracking-wider text-center">Tratamento Dados SAP</p>
+                        <div class="w-full h-64 relative">
+                            <canvas id="sapChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="max-w-6xl mx-auto px-6 py-24">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                
+                <div class="w-full md:w-1/2">
+                    <h2 class="font-serif text-4xl font-light text-brand-dark mb-6">Visão de Liderança</h2>
+                    <div class="prose prose-slate font-light text-gray-600 leading-relaxed">
+                        <p class="mb-4">
+                            Meu estilo de liderança é <strong>colaborativo, transparente e orientado por dados</strong>. No chão de fábrica, acredito que o engajamento nasce de duas coisas essenciais: clareza do que se espera de cada um e presença real no dia a dia do piso.
+                        </p>
+                        <blockquote class="border-l-4 border-brand-accent pl-4 italic text-brand-dark my-6">
+                            "A gestão só funciona quando o indicador chega ao time em linguagem simples e se transforma em uma ação que pode ser executada no turno."
+                        </blockquote>
+                        <p>
+                            Gosto de transformar discussões em ações práticas através da lógica: <em>Medir ➔ Entender o processo ➔ Envolver as pessoas ➔ Agir ➔ Verificar ➔ Padronizar</em>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2">
+                    <div class="bg-surface border border-gray-200 rounded-2xl p-8">
+                        <h3 class="font-serif text-xl font-bold text-brand-dark mb-6">Ferramentas & Competências</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-800 mb-3">Análise de Dados & Automação</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm shadow-sm">Excel Avançado</span>
+                                    <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm shadow-sm">VBA & Apps Script</span>
+                                    <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm shadow-sm">SQL & BigQuery</span>
+                                    <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm shadow-sm">Power BI & Looker</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-800 mb-3">Sistemas & Processos</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm shadow-sm">SAP PM/MM</span>
+                                    <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm shadow-sm">SAP S/4HANA</span>
+                                    <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm shadow-sm">Metodologia 5S & Kaizen</span>
+                                    <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm shadow-sm">PDCA / Ishikawa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="bg-brand-dark border-t border-slate-800 py-12 mt-12">
+            <div class="max-w-6xl mx-auto px-6 text-center text-sm text-slate-400 font-light">
+                &copy; 2026 Engenharia & Operações. Foco em excelência operacional e processos orientados a dados.
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurações globais Chart.js
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            Chart.defaults.color = '#64748b'; // slate-500
+            
+            const accentColor = '#0284C7'; // Sky 600
+            const secondaryColor = '#E2E8F0'; // Slate 200
+            const darkColor = '#1E293B'; // Slate 800
+
+            // 1. Gráfico CAPEX (Acuracidade)
+            const ctxCapex = document.getElementById('capexChart').getContext('2d');
+            new Chart(ctxCapex, {
+                type: 'bar',
+                data: {
+                    labels: ['Q1', 'Q3 (Alvo)'],
+                    datasets: [{
+                        label: 'Acuracidade CAPEX (%)',
+                        data: [63, 93],
+                        backgroundColor: [secondaryColor, accentColor],
+                        borderRadius: 6,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: '#f1f5f9', drawBorder: false },
+                            ticks: { callback: function(value) { return value + '%' } }
+                        },
+                        x: { grid: { display: false, drawBorder: false } }
+                    }
+                }
+            });
+
+            // 2. Gráfico Disponibilidade Física
+            const ctxDisp = document.getElementById('disponibilidadeChart').getContext('2d');
+            new Chart(ctxDisp, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Gap/Falhas', 'Disponibilidade Alcançada'],
+                    datasets: [{
+                        data: [6, 94], // Complemento para 100% (partiu de 83%)
+                        backgroundColor: [secondaryColor, darkColor],
+                        borderWidth: 0,
+                        cutout: '75%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12 } },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                },
+                plugins: [{
+                    id: 'textCenter',
+                    beforeDraw: function(chart) {
+                        var width = chart.width, height = chart.height, ctx = chart.ctx;
+                        ctx.restore();
+                        var fontSize = (height / 114).toFixed(2);
+                        ctx.font = "bold " + fontSize + "em 'Inter'";
+                        ctx.textBaseline = "middle";
+                        ctx.fillStyle = darkColor;
+                        var text = "94%",
+                            textX = Math.round((width - ctx.measureText(text).width) / 2),
+                            textY = height / 2 - 10;
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+            });
+
+            // 3. Gráfico Tempo SAP (Redução de Tempo)
+            const ctxSap = document.getElementById('sapChart').getContext('2d');
+            new Chart(ctxSap, {
+                type: 'bar',
+                data: {
+                    labels: ['Processo Manual', 'Processo Automatizado'],
+                    datasets: [{
+                        label: 'Tempo de Tratamento',
+                        data: [100, 7], // Representando redução de 93%
+                        backgroundColor: [darkColor, accentColor],
+                        borderRadius: 6,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Barra Horizontal
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataIndex === 0 ? ' Cenário Original (100%)' : ' Cenário Pós-VBA (7%)';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { display: false }, // Esconde eixo X para ficar limpo
+                        y: { grid: { display: false, drawBorder: false } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
