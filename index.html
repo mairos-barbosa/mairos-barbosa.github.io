@@ -76,9 +76,14 @@
             </p>
         </div>
         <div class="w-full flex justify-center md:justify-end">
-            <!-- Círculo Tipográfico "MB" -->
-            <div class="w-[320px] h-[320px] rounded-full bg-white border border-sky-100 shadow-[0_20px_60px_-15px_rgba(2,132,199,0.15)] flex items-center justify-center">
-                <span class="text-[100px] font-bold text-sky-600 font-sans tracking-tight">MB</span>
+            <!-- Avatar com Foto e Fallback -->
+            <div class="relative w-[320px] h-[320px] rounded-full bg-white border border-sky-100 shadow-[0_20px_60px_-15px_rgba(2,132,199,0.15)] flex items-center justify-center overflow-hidden">
+                <img src="Foto LinkedIn - 28_08_2026.jpg" alt="Mairos Barbosa" 
+                     class="absolute inset-0 w-full h-full object-cover z-10"
+                     onerror="this.style.display='none'; document.getElementById('fallback-img').style.display='flex';">
+                <div id="fallback-img" class="hidden absolute inset-0 bg-white items-center justify-center text-[100px] font-bold text-sky-600 font-sans tracking-tight z-0">
+                    MB
+                </div>
             </div>
         </div>
     </section>
@@ -98,7 +103,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-slate-900 serif">Governança CAPEX & OPEX</h3>
                     <p class="text-slate-500 text-[15px] leading-relaxed font-light">
-                        Atuação no Mercado Livre estruturando controles físico-financeiros para uma carteira de <strong class="font-semibold text-slate-700">R$ 320 milhões em OPEX</strong> e <strong class="font-semibold text-slate-700">R$ 22 milhões em CAPEX</strong>, cobrindo mais de 330 operações no Brasil com alta acuracidade.
+                        Atuação em multinacional de e-commerce estruturando controles físico-financeiros para uma carteira de <strong class="font-semibold text-slate-700">R$ 320 milhões em OPEX</strong> e <strong class="font-semibold text-slate-700">R$ 22 milhões em CAPEX</strong>, cobrindo mais de 330 operações no Brasil com alta acuracidade.
                     </p>
                 </div>
 
@@ -109,7 +114,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-slate-900 serif">Automação SAP & Dados</h3>
                     <p class="text-slate-500 text-[15px] leading-relaxed font-light">
-                        Desenvolvimento de scripts VBA e cruzamento de bases (SQL/BigQuery) para automatizar extração de relatórios e criação de ordens, reduzindo o trabalho manual massivamente.
+                        Desenvolvimento de scripts VBA e cruzamento de bases (SQL/BigQuery) para automatizar extração de relatórios e criação de ordens, <strong class="font-semibold text-slate-700">reduzindo o trabalho manual massivamente.</strong>
                     </p>
                 </div>
 
@@ -120,7 +125,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-slate-900 serif">Confiabilidade Técnica</h3>
                     <p class="text-slate-500 text-[15px] leading-relaxed font-light">
-                        Liderança técnica em paradas planejadas, implantação de Centros de Monitoramento de Energia e gestão de manutenções críticas para continuidade operacional.
+                        Liderança técnica em paradas planejadas, implantação de <strong class="font-semibold text-slate-700">Centros de Monitoramento de Energia</strong> e gestão de manutenções críticas para continuidade operacional.
                     </p>
                 </div>
             </div>
